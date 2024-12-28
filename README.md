@@ -9,3 +9,6 @@ Script Node.js sederhana untuk menampilkan alamat IP server (lokal/private) bese
 
 ## Menjalankan file index.js
 `node index.js`
+
+## Alternatif
+`npm install --prefix && npm install pm2 -g && npm stat index.js --name "Displaying IP Server with Node.js"`

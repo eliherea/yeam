@@ -1,9 +1,13 @@
 # Displaying IP Server with Node.js
 Script Node.js sederhana untuk menampilkan alamat IP server (lokal/private) beserta port yang digunakan. 
 
-## Instalasi di Amazon Linux 2023/ RedHat
+## Instalasi di Amazon Linux/ RedHat
 ```bash
 yum install git nodejs -y
+```
+## Instalasi di Ubuntu/ Debian
+```bash
+apt-get install git nodejs -y
 ```
 
 ## Menginstal paket/modul dan dependensinya

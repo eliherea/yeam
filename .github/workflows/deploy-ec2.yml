@@ -54,9 +54,9 @@ jobs:
             sudo yum update -y
             # curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
             sudo yum install -y nodejs git
-            git clone https://github.com/dihkaw/showipserverwithnodejs.git
+            sudo git clone https://github.com/dihkaw/showipserverwithnodejs.git
             cd showipserverwithnodejs
-            npm install
-            npm install -g pm2
-            pm2 start index.js
+            sudo npm install
+            sudo npm install -g pm2
+            sudo pm2 start index.js
           EOF

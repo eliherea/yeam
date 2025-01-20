@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
     }
   }
 
-  res.end(`Server ini berjalan di IP Private (lokal) dengan url http://${ipAddress} dan port ${server.address().port}`);
+  res.end(`Server ini berjalan di IP Private (lokal) ${ipAddress} dengan port ${server.address().port}`);
 });
 
 const port = 5000;

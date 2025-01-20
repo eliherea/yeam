@@ -41,12 +41,13 @@ jobs:
       - name: Install Node.js and Dependencies
         run: |
           # SSH ke EC2 instance dan install Node.js
-          ssh -o StrictHostKeyChecking=no -i my-key.pem ec2-user@$PUBLIC_IP << 'EOF'
+          ssh -o StrictHostKeyChecking=no -i vockey.pem ec2-user@$PUBLIC_IP << 'EOF'
             sudo yum update -y
-            curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
-            sudo yum install -y nodejs
+            # curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
+            sudo yum install -y nodejs git
             git clone https://github.com/dihkaw/showipserverwithnodejs.git
             cd showipserverwithnodejs
             npm install
-            npm start &
+            npm install -g pm2
+            pm2 index.js
           EOF

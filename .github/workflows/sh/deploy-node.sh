@@ -15,7 +15,7 @@ cd actions-runner
 sudo curl -o actions-runner-linux-x64-2.321.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.321.0/actions-runner-linux-x64-2.321.0.tar.gz
 sudo tar xzf ./actions-runner-linux-x64-2.321.0.tar.gz || { echo "Extraction failed"; exit 1; }
 sudo chmod -R 777 /home/ec2-user/actions-runner
-sudo -u ec2-user ./config.sh --url https://github.com/jeremiahjirey/Docker-Workflow --token BF6XXUE3OBEHBPB23JF7S5DHSGVAO --name Node2 --unattended
+sudo -u ec2-user ./config.sh --url https://github.com/dihkaw/showipserverwithnodejs --token TokenRunnerAnda --name NamaRunnerAnda --unattended
 sudo ./svc.sh install
 sudo ./svc.sh start
 EOF

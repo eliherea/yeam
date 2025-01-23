@@ -26,7 +26,7 @@ jobs:
       
       # Step 4: Jalankan aplikasi Node.js di latar belakang
       - name: Run Node.js Application in Background
-        run: node index.js &
+        run: node index.js
         env:
           PORT: 5000 # Port dapat disesuaikan sesuai kebutuhan
       

@@ -1,0 +1,31 @@
+name: Deploy Node.js Application
+
+on:
+  workflow_dispatch: # Workflow dapat dijalankan secara manual melalui GitHub UI
+
+jobs:
+  deploy-node-app:
+    name: Deploy Node.js Application on EC2
+    runs-on: self-hosted # Menggunakan runner di EC2 (harus dikonfigurasi sebelumnya)
+    
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20' # Versi Node.js yang akan digunakan
+      
+      # Step 3: Install dependencies (opsional)
+      - name: Install Dependencies
+        run: npm install
+      
+      # Step 4: Jalankan aplikasi Node.js
+      - name: Run Node.js Application
+        run: |
+          nohup node index.js &
+        env:
+          PORT: 5000 # Port dapat disesuaikan sesuai kebutuhan

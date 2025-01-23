@@ -23,8 +23,18 @@ jobs:
       - name: Install Dependencies
         run: npm install
       
-      # Step 4: Jalankan aplikasi Node.js
-      - name: Run Node.js Application
-        run: node index.js
+      # Step 4: Jalankan aplikasi Node.js di latar belakang
+      - name: Run Node.js Application in Background
+        run: |
+          nohup node index.js & # Menjalankan aplikasi di latar belakang
+          sleep 5 # Memberikan waktu aplikasi untuk mulai berjalan
         env:
           PORT: 5000 # Port dapat disesuaikan sesuai kebutuhan
+      
+      # Step 5: Post Setup Node.js (atau tindakan lainnya)
+      - name: Post Setup Node.js
+        run: echo "Aplikasi Node.js sudah berjalan di latar belakang"
+
+      # Step 6: Langkah terakhir (opsional)
+      - name: Final Step
+        run: echo "Workflow selesai dijalankan"

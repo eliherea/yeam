@@ -1,0 +1,30 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "volumes": [
+        {
+            "name": "crud-data"
+        }
+    ],
+    "containerDefinitions": [
+        {
+            "name": "ayam",
+            "image": "304397978118.dkr.ecr.us-east-1.amazonaws.com/ayam:app-try-latest",
+            "cpu": 1024,
+            "memory": 2048,
+            "essential": true,
+            "mountPoints": [
+                {
+                    "sourceVolume": "crud-data",
+                    "containerPath": "/var/app/current/showip"
+                }
+            ],
+            "portMappings": [
+                {
+                    "appProtocol": "http",
+                    "containerPort": 5000,
+                    "hostPort": 5000
+                }
+            ]
+        }
+    ]
+}

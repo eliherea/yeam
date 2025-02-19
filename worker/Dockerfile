@@ -8,7 +8,14 @@ RUN git clone https://github.com/handipradana/nodejsbasic.git .
 RUN apt-get install -y nfs-common
 
 # Set environment variables via build arguments
-
+ARG DB_HOST
+ENV DB_HOST=database-1.c7iehwkxea9z.us-east-1.rds.amazonaws.com
+ARG DB_USER
+ENV DB_USER=admin
+ARG DB_PASSWORD
+ENV DB_PASSWORD=ambatukam
+ARG DB_DATABASE
+ENV DB_DATABASE=crud_db
 # Install PM2 and application dependencies
 RUN npm install -g pm2 && npm install
 
